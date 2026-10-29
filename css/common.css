@@ -1,0 +1,139 @@
+/* ==========================================================================
+   HEX CHAIN — shared tokens + hex board styles (host and contestant board)
+   ========================================================================== */
+
+:root {
+  --blue: #1e7bff;
+  --blue-hi: #5cc2ff;
+  --blue-deep: #0a2c9c;
+  --gold: #ffc928;
+  --gold-hi: #fff4b0;
+  --gold-deep: #b06d00;
+  --ink: #f4f6ff;
+  --ink-dim: #a9b1d6;
+  --bg: #050a1f;
+  --good: #22c55e;
+  --bad: #ef4444;
+  --font-ui: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Bebas Neue', 'Impact', 'Arial Narrow Bold', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { font-family: var(--font-ui); color: var(--ink); background: var(--bg); }
+[hidden] { display: none !important; }
+
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0.05em 0.4em;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  font: 700 0.72em/1.4 ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ---------------------------- Hex board (SVG) ---------------------------- */
+
+.hexboard { display: block; width: 100%; height: 100%; overflow: visible; user-select: none; }
+
+.hexboard .bar { filter: drop-shadow(0 0 8px currentColor); }
+.hexboard .bar-blue { fill: url(#hb-bar-blue); color: var(--blue); }
+.hexboard .bar-gold { fill: url(#hb-bar-gold); color: var(--gold); }
+
+.hexboard .hex {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.5s ease, filter 0.4s ease;
+  --glow: rgba(255, 255, 255, 0.7);
+}
+.hexboard .hex.owner-blue { --glow: #4db3ff; }
+.hexboard .hex.owner-gold { --glow: #ffd23f; }
+
+.hexboard .hex-base {
+  fill: url(#hb-neutral);
+  stroke: rgba(190, 205, 255, 0.35);
+  stroke-width: 2.5;
+  transition: stroke 0.25s, stroke-width 0.25s;
+}
+.hexboard .owner-blue .hex-base { fill: url(#hb-blue); stroke: #a6dcff; }
+.hexboard .owner-gold .hex-base { fill: url(#hb-gold); stroke: #fff6c4; }
+.hexboard .hex-shine { fill: url(#hb-shine); pointer-events: none; }
+
+.hexboard .hex-letter {
+  fill: #fff;
+  font-family: var(--font-ui);
+  font-weight: 900;
+  font-size: 50px;
+  text-anchor: middle;
+  dominant-baseline: central;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 20, 0.45);
+  stroke-width: 3px;
+  pointer-events: none;
+}
+.hexboard .hex-letter.long { font-size: 34px; }
+.hexboard .owner-gold .hex-letter { fill: #4a2700; stroke: rgba(255, 255, 255, 0.35); }
+
+/* Selected hex: breathing white halo */
+.hexboard .hex.selected .hex-base { stroke: #fff; stroke-width: 5; }
+.hexboard .hex.selected { animation: hexSelected 1.3s ease-in-out infinite; }
+@keyframes hexSelected {
+  0%, 100% { filter: drop-shadow(0 0 4px #fff) brightness(1.05); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 20px #fff) brightness(1.35); transform: scale(1.05); }
+}
+
+/* Claim flip (owner colour is applied mid-flip by render.js) */
+.hexboard .hex.flip { animation: hexFlip 0.7s cubic-bezier(0.45, 0, 0.55, 1); }
+@keyframes hexFlip {
+  0% { transform: scaleX(1); }
+  42%, 58% { transform: scaleX(0.02) scaleY(1.1); filter: brightness(2); }
+  80% { transform: scaleX(1.08) scaleY(1.08); filter: drop-shadow(0 0 26px var(--glow)) brightness(1.3); }
+  100% { transform: scaleX(1); }
+}
+
+/* New-board deal-in */
+.hexboard .hex.intro { animation: hexIn 0.65s cubic-bezier(0.2, 1.5, 0.4, 1) both; animation-delay: var(--d, 0ms); }
+@keyframes hexIn {
+  from { transform: scale(0) rotate(-60deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* Winning chain */
+.hexboard .hex.win { animation: hexWin 1.1s ease-in-out var(--wd, 0s) infinite both; }
+@keyframes hexWin {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px var(--glow)) brightness(1.05); }
+  50% { transform: scale(1.09); filter: drop-shadow(0 0 26px var(--glow)) brightness(1.4); }
+}
+.hexboard .hex.dim { opacity: 0.3; filter: saturate(0.4); }
+
+.hexboard .win-line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px #fff);
+}
+.hexboard .win-line.team-blue { filter: drop-shadow(0 0 10px var(--blue-hi)); }
+.hexboard .win-line.team-gold { filter: drop-shadow(0 0 10px var(--gold)); }
+.hexboard .win-line.draw { animation: drawLine 1.2s ease-out 0.25s forwards; }
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+/* Host-only interactions */
+.hexboard--host .hex { cursor: pointer; }
+.hexboard--host .hex:not(.claimed):hover .hex-base { stroke: #fff; stroke-width: 4; }
+.hexboard--host .hex.claimed { cursor: not-allowed; }
+.hexboard--host.editing .hex { cursor: crosshair; }
+.hexboard--host.editing .hex:hover .hex-base { stroke: #ff5fd2; stroke-width: 4; }
+.hexboard .hex.edit-sel .hex-base { stroke: #ff5fd2; stroke-width: 7; stroke-dasharray: 12 7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hexboard .hex, .hexboard .win-line { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

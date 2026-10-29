@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEX CHAIN — Host Control Panel</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='95,50 72.5,89 27.5,89 5,50 27.5,11 72.5,11' fill='%231e7bff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/host.css">
+</head>
+<body class="host-page">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo-hex" aria-hidden="true"></span>
+      <div>
+        <div class="brand-title" id="hdrTitle">HEX CHAIN</div>
+        <div class="brand-sub">Host Control Panel · <span class="private">Do not screen-share this window</span></div>
+      </div>
+    </div>
+    <div class="topbar-mid">
+      <span class="pill" id="roundPill">Round 1</span>
+      <span class="pill" id="phasePill">Ready</span>
+      <span class="pill conn" id="connPill"><span class="dot"></span><span id="connText">No board connected</span></span>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-primary" id="btnOpenBoard" title="Open the contestant board in a new window (B)">Open Contestant Board ↗</button>
+      <button class="btn" id="btnUndo" title="Undo (Ctrl+Z)">↶ Undo</button>
+      <button class="btn" id="btnNewRound" title="Deal a new board, keep scores">New Round</button>
+      <button class="btn btn-danger" id="btnReset" title="Reset scores, stats and board">Reset Game</button>
+    </div>
+  </header>
+
+  <main class="console">
+    <section class="panel board-panel">
+      <div class="panel-head">
+        <h2>Game Board</h2>
+        <div class="legend">
+          <span><i class="sw sw-blue"></i>Blue: left ⟷ right</span>
+          <span><i class="sw sw-gold"></i>Gold: top ⇅ bottom</span>
+        </div>
+        <label class="switch" title="Edit mode (E)">
+          <input type="checkbox" id="editMode">
+          <span class="switch-ui"></span>
+          <span>Edit board</span>
+        </label>
+      </div>
+      <div class="board-holder"><svg id="board" aria-label="Game board"></svg></div>
+      <div class="turn-bar">
+        <span class="turn-label">Active team</span>
+        <button class="team-btn" data-team="blue">
+          <span class="team-dot"></span><span class="tname" id="tbName-blue">Blue Team</span>
+          <span class="tmeta"><b id="tbHex-blue">0</b> hexes · <b id="tbRounds-blue">0</b> rounds</span>
+        </button>
+        <button class="btn btn-icon" id="btnSwap" title="Switch active team (T)">⇄</button>
+        <button class="team-btn" data-team="gold">
+          <span class="team-dot"></span><span class="tname" id="tbName-gold">Gold Team</span>
+          <span class="tmeta"><b id="tbHex-gold">0</b> hexes · <b id="tbRounds-gold">0</b> rounds</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="panel q-panel" id="qPanel" aria-live="polite"></section>
+
+    <section class="panel tabs-panel">
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="stats">Statistics</button>
+        <button role="tab" data-tab="settings">Settings</button>
+        <button role="tab" data-tab="bank">Questions</button>
+        <button role="tab" data-tab="log">Log</button>
+        <button role="tab" data-tab="help">Help</button>
+      </nav>
+
+      <div class="tab-body" data-tab="stats" id="tab-stats"></div>
+
+      <div class="tab-body" data-tab="settings">
+        <div class="form-grid">
+          <label class="field"><span>Show title</span><input id="setTitle" maxlength="30"></label>
+          <label class="field"><span>Board size</span><select id="setSize"></select></label>
+          <label class="field"><span>Blue team name</span><input id="setBlue" maxlength="24"></label>
+          <label class="field"><span>Gold team name</span><input id="setGold" maxlength="24"></label>
+          <label class="field"><span>After a correct answer</span>
+            <select id="setTurn">
+              <option value="alternate">Turns alternate between teams</option>
+              <option value="keep">Answering team picks next (classic)</option>
+            </select>
+          </label>
+          <label class="field"><span>Answer timer (seconds)</span><input type="number" id="setTimer" min="3" max="120"></label>
+        </div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="setPass"> After a wrong answer, pass to the other team for a steal</label>
+          <label class="check"><input type="checkbox" id="setShowQ"> Show question text on the contestant board (answers are never shown)</label>
+          <label class="check"><input type="checkbox" id="setSound"> Sound effects on the contestant board</label>
+          <label class="check"><input type="checkbox" id="setHide"> Safe mode: blur answers on this screen until hovered</label>
+        </div>
+      </div>
+
+      <div class="tab-body" data-tab="bank">
+        <div id="bankSummary" class="bank-summary"></div>
+        <div class="btn-row">
+          <label class="btn btn-primary file-btn">📂 Load JSON file<input type="file" id="bankFile" accept=".json,application/json" hidden></label>
+          <button class="btn" id="bankSample">Restore sample set</button>
+          <button class="btn" id="bankDownload">⬇ Download set</button>
+          <button class="btn" id="bankResetUsed">Reset “used” history</button>
+        </div>
+        <details class="paste">
+          <summary>Paste JSON instead</summary>
+          <textarea id="bankPaste" rows="6" spellcheck="false" placeholder='{"name": "My set", "questions": {"A": {"easy": [{"q": "What A is…?", "a": "…"}]}}}'></textarea>
+          <button class="btn" id="bankPasteLoad">Load pasted JSON</button>
+        </details>
+        <div id="bankTable"></div>
+      </div>
+
+      <div class="tab-body" data-tab="log"><ol class="log" id="log"></ol></div>
+
+      <div class="tab-body help" data-tab="help">
+        <h4>Running a game in Teams</h4>
+        <ol>
+          <li>Click <b>Open Contestant Board</b> — it opens in a new window in this browser.</li>
+          <li>In Teams choose <b>Share → Window</b> and pick the contestant board window (tick <i>Include sound</i> for effects).</li>
+          <li>Click the board once to go live, then press <kbd>F</kbd> on it for full screen if you have a second monitor.</li>
+          <li>Keep this control panel private. Answers only ever appear here.</li>
+        </ol>
+        <h4>Keyboard shortcuts</h4>
+        <div class="shortcuts">
+          <span><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> Easy / Medium / Hard</span>
+          <span><kbd>R</kbd> Random difficulty</span>
+          <span><kbd>N</kbd> Another question</span>
+          <span><kbd>C</kbd> Correct</span>
+          <span><kbd>X</kbd> Incorrect</span>
+          <span><kbd>S</kbd> Start timer</span>
+          <span><kbd>T</kbd> Switch team</span>
+          <span><kbd>L</kbd> Random letter</span>
+          <span><kbd>E</kbd> Edit mode</span>
+          <span><kbd>Esc</kbd> Deselect</span>
+          <span><kbd>Ctrl</kbd>+<kbd>Z</kbd> Undo</span>
+          <span><kbd>B</kbd> Open board</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script type="module" src="js/host.js"></script>
+</body>
+</html>

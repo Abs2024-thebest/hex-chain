@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEX CHAIN — The Letter Link Game Show</title>
+  <meta name="description" content="A hexagon letter-link quiz game show for team meetings. Host dashboard + contestant board.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='95,50 72.5,89 27.5,89 5,50 27.5,11 72.5,11' fill='%23ffc928'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px 16px;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 30%, rgba(40, 60, 170, 0.6), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 0% 100%, rgba(30, 123, 255, 0.3), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 100% 100%, rgba(255, 180, 20, 0.22), transparent 70%),
+        #050a1f;
+    }
+    main { width: min(960px, 100%); text-align: center; }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 13vw, 8rem);
+      line-height: 0.9;
+      letter-spacing: 0.08em;
+      background: linear-gradient(180deg, #fffbe6 0%, #ffd84d 45%, #e09400 55%, #ffe27a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 3px 0 #6b3d00) drop-shadow(0 0 26px rgba(255, 190, 40, 0.5));
+    }
+    .tag { margin: 10px 0 36px; color: var(--ink-dim); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.85rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card {
+      --c: var(--blue);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 26px;
+      border-radius: 20px;
+      text-align: left;
+      text-decoration: none;
+      color: var(--ink);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 45%), linear-gradient(160deg, color-mix(in srgb, var(--c) 35%, #0a1030), #070b22 80%);
+      border: 2px solid color-mix(in srgb, var(--c) 70%, transparent);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px color-mix(in srgb, var(--c) 25%, transparent);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .card:hover, .card:focus-visible { transform: translateY(-4px); box-shadow: 0 26px 50px rgba(0, 0, 0, 0.5), 0 0 50px color-mix(in srgb, var(--c) 50%, transparent); outline: none; }
+    .card.gold { --c: var(--gold); }
+    .card h2 { margin: 0; font-family: var(--font-display); font-size: 2.2rem; letter-spacing: 0.05em; }
+    .card p { margin: 0; color: var(--ink-dim); line-height: 1.55; }
+    .card .go { margin-top: auto; font-weight: 800; color: color-mix(in srgb, var(--c) 70%, #fff); }
+    .steps { margin-top: 34px; text-align: left; padding: 22px 26px; border-radius: 16px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .steps h3 { margin: 0 0 10px; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); }
+    .steps ol { margin: 0; padding-left: 20px; line-height: 1.8; }
+    footer { margin-top: 26px; color: var(--ink-dim); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>HEX CHAIN</h1>
+    <div class="tag">The letter-link quiz show for team meetings</div>
+    <div class="cards">
+      <a class="card" href="host.html">
+        <h2>Host Dashboard</h2>
+        <p>Private control panel. Pick letters, read questions and answers, mark results, override the board and track statistics.</p>
+        <span class="go">Open control panel →</span>
+      </a>
+      <a class="card gold" href="board.html" target="hexchain-board">
+        <h2>Contestant Board</h2>
+        <p>The TV-style screen you share in Microsoft Teams. Board, teams, turns and celebrations only — never the answers.</p>
+        <span class="go">Open board ↗</span>
+      </a>
+    </div>
+    <section class="steps">
+      <h3>Go live in 60 seconds</h3>
+      <ol>
+        <li>Open the <b>Host Dashboard</b> and click <b>Open Contestant Board</b> (same browser).</li>
+        <li>In Teams: <b>Share → Window</b>, choose the board window and tick <i>Include sound</i>.</li>
+        <li>Click the board once to go live. Blue links <b>left ⟷ right</b>, Gold links <b>top ⇅ bottom</b>.</li>
+        <li>Teams call a letter, you ask the question and mark it Correct or Incorrect. First unbroken chain wins!</li>
+      </ol>
+    </section>
+    <footer>An original game inspired by classic TV quiz formats. No affiliation with any broadcaster.</footer>
+  </main>
+</body>
+</html>

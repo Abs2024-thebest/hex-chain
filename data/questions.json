@@ -1,0 +1,369 @@
+{
+  "name": "General Knowledge — Sample Set",
+  "questions": {
+    "A": {
+      "easy": [
+        { "q": "What A is the largest continent on Earth?", "a": "Asia" },
+        { "q": "What A is the fruit that, according to the saying, keeps the doctor away?", "a": "Apple" }
+      ],
+      "medium": [
+        { "q": "What A is the capital city of Greece?", "a": "Athens" },
+        { "q": "What A is the Greek goddess of love and beauty?", "a": "Aphrodite" }
+      ],
+      "hard": [
+        { "q": "What A is the SI unit of electric current?", "a": "Ampere (amp)" },
+        { "q": "What A is the longest continental mountain range in the world, running down South America?", "a": "Andes" }
+      ]
+    },
+    "B": {
+      "easy": [
+        { "q": "What B is the capital city of Germany?", "a": "Berlin" },
+        { "q": "What B is the long yellow fruit that monkeys are famously fond of?", "a": "Banana" }
+      ],
+      "medium": [
+        { "q": "What B is the London residence of the British monarch?", "a": "Buckingham Palace" },
+        { "q": "What B is the largest animal known to have ever lived?", "a": "Blue whale" }
+      ],
+      "hard": [
+        { "q": "What B is the scale, from 0 to 12, used to describe wind speed?", "a": "Beaufort scale" },
+        { "q": "What B is the smallest unit of digital information, a 0 or a 1?", "a": "Bit" }
+      ]
+    },
+    "C": {
+      "easy": [
+        { "q": "What C is the capital city of Egypt?", "a": "Cairo" },
+        { "q": "What C is the orange vegetable that rabbits are said to love?", "a": "Carrot" }
+      ],
+      "medium": [
+        { "q": "What C is the gas that plants absorb from the air for photosynthesis?", "a": "Carbon dioxide" },
+        { "q": "What C is the capital city of Australia?", "a": "Canberra" }
+      ],
+      "hard": [
+        { "q": "What C is the chemical element with the symbol Cu?", "a": "Copper" },
+        { "q": "What C is the Polish composer famous for his piano works, including the 'Minute Waltz'?", "a": "Chopin" }
+      ]
+    },
+    "D": {
+      "easy": [
+        { "q": "What D is a sweet, fried ring of dough?", "a": "Doughnut" },
+        { "q": "What D is the intelligent sea mammal known for its clicks and whistles?", "a": "Dolphin" }
+      ],
+      "medium": [
+        { "q": "What D is the capital city of the Republic of Ireland?", "a": "Dublin" },
+        { "q": "What D is the name for a shape with ten sides?", "a": "Decagon" }
+      ],
+      "hard": [
+        { "q": "What D is the author of 'Great Expectations' and 'Oliver Twist'?", "a": "(Charles) Dickens" },
+        { "q": "What D is the African country formerly known as French Somaliland?", "a": "Djibouti" }
+      ]
+    },
+    "E": {
+      "easy": [
+        { "q": "What E is the largest living land animal?", "a": "Elephant" },
+        { "q": "What E is the planet we live on?", "a": "Earth" }
+      ],
+      "medium": [
+        { "q": "What E is the highest mountain on Earth above sea level?", "a": "Everest" },
+        { "q": "What E is the iron landmark in Paris completed in 1889?", "a": "Eiffel Tower" }
+      ],
+      "hard": [
+        { "q": "What E is the ancient Greek mathematician known as the 'father of geometry'?", "a": "Euclid" },
+        { "q": "What E is the outermost layer of human skin?", "a": "Epidermis" }
+      ]
+    },
+    "F": {
+      "easy": [
+        { "q": "What F is the country whose capital is Paris?", "a": "France" },
+        { "q": "What F is a reddish-brown wild animal with a bushy tail?", "a": "Fox" }
+      ],
+      "medium": [
+        { "q": "What F is the Nordic country whose capital is Helsinki?", "a": "Finland" },
+        { "q": "What F is the name for a baby horse?", "a": "Foal" }
+      ],
+      "hard": [
+        { "q": "What F is the SI unit of electrical capacitance?", "a": "Farad" },
+        { "q": "What F is the Italian city regarded as the birthplace of the Renaissance?", "a": "Florence" }
+      ]
+    },
+    "G": {
+      "easy": [
+        { "q": "What G is the animal with the longest neck?", "a": "Giraffe" },
+        { "q": "What G is the colour of grass?", "a": "Green" }
+      ],
+      "medium": [
+        { "q": "What G is the Egyptian site of the Great Pyramid?", "a": "Giza" },
+        { "q": "What G is the force that keeps our feet on the ground?", "a": "Gravity" }
+      ],
+      "hard": [
+        { "q": "What G is the Spanish city famous for the Alhambra palace?", "a": "Granada" },
+        { "q": "What G is the Italian astronomer who was tried for supporting the idea that the Earth orbits the Sun?", "a": "Galileo (Galilei)" }
+      ]
+    },
+    "H": {
+      "easy": [
+        { "q": "What H is a farm animal people ride and that says 'neigh'?", "a": "Horse" },
+        { "q": "What H is the opposite of cold?", "a": "Hot" }
+      ],
+      "medium": [
+        { "q": "What H is the capital city of Finland?", "a": "Helsinki" },
+        { "q": "What H is the lightest chemical element?", "a": "Hydrogen" }
+      ],
+      "hard": [
+        { "q": "What H is the ancient Greek physician known as the 'father of medicine'?", "a": "Hippocrates" },
+        { "q": "What H is the capital city of the US state of Hawaii?", "a": "Honolulu" }
+      ]
+    },
+    "I": {
+      "easy": [
+        { "q": "What I is frozen water?", "a": "Ice" },
+        { "q": "What I is the European country shaped like a boot?", "a": "Italy" }
+      ],
+      "medium": [
+        { "q": "What I is the country often called the 'Emerald Isle'?", "a": "Ireland" },
+        { "q": "What I is the country with the world's largest population?", "a": "India" }
+      ],
+      "hard": [
+        { "q": "What I is the Turkish city once known as Constantinople?", "a": "Istanbul" },
+        { "q": "What I is the chemical element with atomic number 53, used as an antiseptic?", "a": "Iodine" }
+      ]
+    },
+    "J": {
+      "easy": [
+        { "q": "What J is the sweet fruit spread you might put on toast?", "a": "Jam" },
+        { "q": "What J is the month that comes after June?", "a": "July" }
+      ],
+      "medium": [
+        { "q": "What J is the largest planet in our solar system?", "a": "Jupiter" },
+        { "q": "What J is the Caribbean island where reggae music originated?", "a": "Jamaica" }
+      ],
+      "hard": [
+        { "q": "What J is the capital city of Indonesia?", "a": "Jakarta" },
+        { "q": "What J is the two-faced Roman god of beginnings, after whom January is named?", "a": "Janus" }
+      ]
+    },
+    "K": {
+      "easy": [
+        { "q": "What K is the Australian animal that hops and carries its baby in a pouch?", "a": "Kangaroo" },
+        { "q": "What K is the toy you fly in the wind on a long string?", "a": "Kite" }
+      ],
+      "medium": [
+        { "q": "What K is the African country whose capital is Nairobi?", "a": "Kenya" },
+        { "q": "What K is the small green fruit with fuzzy brown skin?", "a": "Kiwi (fruit)" }
+      ],
+      "hard": [
+        { "q": "What K is the second-highest mountain in the world?", "a": "K2" },
+        { "q": "What K is the temperature scale that starts at absolute zero?", "a": "Kelvin" }
+      ]
+    },
+    "L": {
+      "easy": [
+        { "q": "What L is the animal known as the 'King of the Jungle'?", "a": "Lion" },
+        { "q": "What L is a sour yellow citrus fruit?", "a": "Lemon" }
+      ],
+      "medium": [
+        { "q": "What L is the capital city of Portugal?", "a": "Lisbon" },
+        { "q": "What L is the English city where the Beatles formed?", "a": "Liverpool" }
+      ],
+      "hard": [
+        { "q": "What L is the small European country whose capital is Vaduz?", "a": "Liechtenstein" },
+        { "q": "What L is the first name of the artist who painted the Mona Lisa?", "a": "Leonardo (da Vinci)" }
+      ]
+    },
+    "M": {
+      "easy": [
+        { "q": "What M is the natural satellite that orbits the Earth?", "a": "Moon" },
+        { "q": "What M is the white drink that comes from cows?", "a": "Milk" }
+      ],
+      "medium": [
+        { "q": "What M is the capital city of Spain?", "a": "Madrid" },
+        { "q": "What M is the planet known as the Red Planet?", "a": "Mars" }
+      ],
+      "hard": [
+        { "q": "What M is the deepest oceanic trench on Earth?", "a": "Mariana Trench" },
+        { "q": "What M is the Austrian composer of the opera 'The Magic Flute'?", "a": "Mozart" }
+      ]
+    },
+    "N": {
+      "easy": [
+        { "q": "What N is the number that comes after eight?", "a": "Nine" },
+        { "q": "What N is the home a bird builds from twigs?", "a": "Nest" }
+      ],
+      "medium": [
+        { "q": "What N is the river that flows through Egypt and is usually considered the longest in Africa?", "a": "Nile" },
+        { "q": "What N is the capital city of Kenya?", "a": "Nairobi" }
+      ],
+      "hard": [
+        { "q": "What N is the planet farthest from the Sun in our solar system?", "a": "Neptune" },
+        { "q": "What N is the French emperor defeated at the Battle of Waterloo?", "a": "Napoleon (Bonaparte)" }
+      ]
+    },
+    "O": {
+      "easy": [
+        { "q": "What O is a round citrus fruit that is also the name of a colour?", "a": "Orange" },
+        { "q": "What O is the bird famous for hooting at night?", "a": "Owl" }
+      ],
+      "medium": [
+        { "q": "What O is the capital city of Norway?", "a": "Oslo" },
+        { "q": "What O is the gas we need to breathe to stay alive?", "a": "Oxygen" }
+      ],
+      "hard": [
+        { "q": "What O is the mountain that was home to the gods in Greek mythology?", "a": "(Mount) Olympus" },
+        { "q": "What O is the capital city of Canada?", "a": "Ottawa" }
+      ]
+    },
+    "P": {
+      "easy": [
+        { "q": "What P is the black-and-white bear that eats bamboo?", "a": "Panda" },
+        { "q": "What P is the capital city of France?", "a": "Paris" }
+      ],
+      "medium": [
+        { "q": "What P is the largest ocean on Earth?", "a": "Pacific" },
+        { "q": "What P is the process plants use to make food from sunlight?", "a": "Photosynthesis" }
+      ],
+      "hard": [
+        { "q": "What P is the ancient Greek philosopher who wrote 'The Republic'?", "a": "Plato" },
+        { "q": "What P is the capital city of the Czech Republic?", "a": "Prague" }
+      ]
+    },
+    "Q": {
+      "easy": [
+        { "q": "What Q is a female monarch, or the wife of a king?", "a": "Queen" },
+        { "q": "What Q is a warm bed cover made of stitched layers of fabric?", "a": "Quilt" }
+      ],
+      "medium": [
+        { "q": "What Q is the Canadian province where French is the main language?", "a": "Quebec" },
+        { "q": "What Q is the US coin worth 25 cents?", "a": "Quarter" }
+      ],
+      "hard": [
+        { "q": "What Q is the mineral whose vibrating crystals keep time in many watches?", "a": "Quartz" },
+        { "q": "What Q is the capital city of Ecuador?", "a": "Quito" }
+      ]
+    },
+    "R": {
+      "easy": [
+        { "q": "What R is the colour of a ripe strawberry?", "a": "Red" },
+        { "q": "What R is water falling from the clouds?", "a": "Rain" }
+      ],
+      "medium": [
+        { "q": "What R is the capital city of Italy?", "a": "Rome" },
+        { "q": "What R is the largest country in the world by area?", "a": "Russia" }
+      ],
+      "hard": [
+        { "q": "What R is the inscribed stone that helped scholars decipher Egyptian hieroglyphs?", "a": "Rosetta Stone" },
+        { "q": "What R is the Dutch painter of 'The Night Watch'?", "a": "Rembrandt" }
+      ]
+    },
+    "S": {
+      "easy": [
+        { "q": "What S is the star at the centre of our solar system?", "a": "Sun" },
+        { "q": "What S is a long reptile with no legs?", "a": "Snake" }
+      ],
+      "medium": [
+        { "q": "What S is the planet famous for its spectacular rings?", "a": "Saturn" },
+        { "q": "What S is the Australian city famous for its Opera House?", "a": "Sydney" }
+      ],
+      "hard": [
+        { "q": "What S is the prehistoric stone circle on Salisbury Plain in England?", "a": "Stonehenge" },
+        { "q": "What S is the capital city of South Korea?", "a": "Seoul" }
+      ]
+    },
+    "T": {
+      "easy": [
+        { "q": "What T is the large wild cat with orange fur and black stripes?", "a": "Tiger" },
+        { "q": "What T is the capital city of Japan?", "a": "Tokyo" }
+      ],
+      "medium": [
+        { "q": "What T is the passenger ship that sank on its maiden voyage in 1912?", "a": "Titanic" },
+        { "q": "What T is the river that flows through London?", "a": "Thames" }
+      ],
+      "hard": [
+        { "q": "What T is the boy pharaoh whose tomb was discovered in 1922?", "a": "Tutankhamun" },
+        { "q": "What T is the chemical element with the symbol Sn?", "a": "Tin" }
+      ]
+    },
+    "U": {
+      "easy": [
+        { "q": "What U is the mythical horse with a single horn?", "a": "Unicorn" },
+        { "q": "What U is the thing you open to keep dry in the rain?", "a": "Umbrella" }
+      ],
+      "medium": [
+        { "q": "What U is the planet that spins on its side?", "a": "Uranus" },
+        { "q": "What U is the country whose capital is Kyiv?", "a": "Ukraine" }
+      ],
+      "hard": [
+        { "q": "What U is the South American country whose capital is Montevideo?", "a": "Uruguay" },
+        { "q": "What U is the ancient Sumerian city in modern-day Iraq, famous for its great ziggurat?", "a": "Ur" }
+      ]
+    },
+    "V": {
+      "easy": [
+        { "q": "What V is the stringed instrument held under the chin and played with a bow?", "a": "Violin" },
+        { "q": "What V is a mountain that can erupt with lava?", "a": "Volcano" }
+      ],
+      "medium": [
+        { "q": "What V is the capital city of Austria?", "a": "Vienna" },
+        { "q": "What V is the hottest planet in our solar system?", "a": "Venus" }
+      ],
+      "hard": [
+        { "q": "What V is the Italian composer of 'The Four Seasons'?", "a": "Vivaldi" },
+        { "q": "What V is the capital city of Malta?", "a": "Valletta" }
+      ]
+    },
+    "W": {
+      "easy": [
+        { "q": "What W is the huge sea mammal that breathes through a blowhole?", "a": "Whale" },
+        { "q": "What W is the season that comes after autumn?", "a": "Winter" }
+      ],
+      "medium": [
+        { "q": "What W is the capital city of Poland?", "a": "Warsaw" },
+        { "q": "What W is the 1815 battle in which Napoleon was finally defeated?", "a": "Waterloo" }
+      ],
+      "hard": [
+        { "q": "What W is the capital city of New Zealand?", "a": "Wellington" },
+        { "q": "What W is the unit of power named after a Scottish engineer?", "a": "Watt" }
+      ]
+    },
+    "X": {
+      "easy": [
+        { "q": "What X is the musical instrument with wooden bars struck by small hammers?", "a": "Xylophone" },
+        { "q": "What X is the type of picture doctors take to see your bones?", "a": "X-ray" }
+      ],
+      "medium": [
+        { "q": "What X is the video game console made by Microsoft?", "a": "Xbox" },
+        { "q": "What X is the word for fear or dislike of people from other countries?", "a": "Xenophobia" }
+      ],
+      "hard": [
+        { "q": "What X is the noble gas with the chemical symbol Xe?", "a": "Xenon" },
+        { "q": "What X is the ancient Greek soldier and historian who wrote the 'Anabasis'?", "a": "Xenophon" }
+      ]
+    },
+    "Y": {
+      "easy": [
+        { "q": "What Y is the colour of a ripe banana?", "a": "Yellow" },
+        { "q": "What Y is the yellow part in the middle of an egg?", "a": "Yolk" }
+      ],
+      "medium": [
+        { "q": "What Y is the currency of Japan?", "a": "Yen" },
+        { "q": "What Y is the practice of poses and breathing that originated in ancient India?", "a": "Yoga" }
+      ],
+      "hard": [
+        { "q": "What Y is the longest river in Asia?", "a": "Yangtze" },
+        { "q": "What Y is the US national park that is home to the Old Faithful geyser?", "a": "Yellowstone" }
+      ]
+    },
+    "Z": {
+      "easy": [
+        { "q": "What Z is the African animal with black and white stripes?", "a": "Zebra" },
+        { "q": "What Z is the number that comes before one?", "a": "Zero" }
+      ],
+      "medium": [
+        { "q": "What Z is the king of the gods in Greek mythology?", "a": "Zeus" },
+        { "q": "What Z is the African country whose capital is Harare?", "a": "Zimbabwe" }
+      ],
+      "hard": [
+        { "q": "What Z is the largest city in Switzerland?", "a": "Zurich" },
+        { "q": "What Z is the chemical element with the symbol Zn?", "a": "Zinc" }
+      ]
+    }
+  }
+}

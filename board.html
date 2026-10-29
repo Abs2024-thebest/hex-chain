@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HEX CHAIN — Contestant Board</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='95,50 72.5,89 27.5,89 5,50 27.5,11 72.5,11' fill='%23ffc928'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/board.css">
+</head>
+<body class="board-page">
+  <!-- Animated studio backdrop -->
+  <div class="studio" aria-hidden="true">
+    <div class="beam beam-1"></div>
+    <div class="beam beam-2"></div>
+    <div class="beam beam-3"></div>
+    <div class="studio-grid"></div>
+    <div class="floor-glow"></div>
+  </div>
+  <canvas id="bokeh" aria-hidden="true"></canvas>
+
+  <div class="stage">
+    <header class="show-header">
+      <div class="show-title" id="showTitle">HEX CHAIN</div>
+      <div class="round-badge" id="roundBadge">ROUND 1</div>
+    </header>
+
+    <main class="arena">
+      <aside class="team-card blue" id="card-blue">
+        <div class="turn-flag">TO PLAY</div>
+        <svg class="crest" viewBox="0 0 100 100" aria-hidden="true"><polygon points="95,50 72.5,89 27.5,89 5,50 27.5,11 72.5,11"/></svg>
+        <div class="team-name" id="name-blue">Blue Team</div>
+        <div class="team-goal"><span>◀</span> LEFT TO RIGHT <span>▶</span></div>
+        <div class="team-stats">
+          <div><b id="hex-blue">0</b><small>HEXES</small></div>
+          <div><b id="rounds-blue">0</b><small>ROUNDS</small></div>
+        </div>
+      </aside>
+
+      <section class="board-stage">
+        <svg id="board" role="img" aria-label="Game board"></svg>
+        <div class="flash" id="flash" aria-live="assertive"></div>
+      </section>
+
+      <aside class="team-card gold" id="card-gold">
+        <div class="turn-flag">TO PLAY</div>
+        <svg class="crest" viewBox="0 0 100 100" aria-hidden="true"><polygon points="95,50 72.5,89 27.5,89 5,50 27.5,11 72.5,11"/></svg>
+        <div class="team-name" id="name-gold">Gold Team</div>
+        <div class="team-goal"><span>▲</span> TOP TO BOTTOM <span>▼</span></div>
+        <div class="team-stats">
+          <div><b id="hex-gold">0</b><small>HEXES</small></div>
+          <div><b id="rounds-gold">0</b><small>ROUNDS</small></div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="question-card" id="questionCard" hidden>
+      <div class="qc-letter" id="qcLetter">A</div>
+      <div class="qc-body">
+        <div class="qc-kicker" id="qcKicker">MEDIUM</div>
+        <div class="qc-text" id="qcText"></div>
+      </div>
+    </div>
+
+    <footer class="status-bar" id="statusBar">
+      <div class="status-text" id="statusText">Waiting for the host…</div>
+      <div class="timer" id="timer" hidden>
+        <svg viewBox="0 0 100 100"><circle class="timer-track" cx="50" cy="50" r="44"/><circle class="timer-ring" id="timerRing" cx="50" cy="50" r="44"/></svg>
+        <span id="timerText">10</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="winner-overlay" id="winner" hidden>
+    <div class="winner-inner">
+      <div class="winner-kicker" id="winnerKicker">ROUND 1</div>
+      <div class="winner-name" id="winnerName">BLUE TEAM</div>
+      <div class="winner-sub">WIN!</div>
+    </div>
+  </div>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <div class="waiting" id="waiting">
+    <div class="waiting-inner">
+      <div class="waiting-hex"></div>
+      <h1>Waiting for the host…</h1>
+      <p>Open the <b>Host Dashboard</b> in another tab or window of <b>this same browser</b>.<br>The board will light up the moment a game starts.</p>
+    </div>
+  </div>
+
+  <button class="start-overlay" id="startOverlay">
+    <span class="start-card">
+      <span class="start-title">Click to go live</span>
+      <span class="start-sub">Enables sound effects · press <kbd>F</kbd> for full screen · <kbd>M</kbd> to mute</span>
+    </span>
+  </button>
+
+  <script type="module" src="js/board.js"></script>
+</body>
+</html>
